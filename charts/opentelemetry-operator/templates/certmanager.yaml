@@ -13,8 +13,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   dnsNames:
-    - {{ template "opentelemetry-operator.fullname" . }}-webhook.{{ .Release.Namespace }}.svc
-    - {{ template "opentelemetry-operator.fullname" . }}-webhook.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}
+    - {{ template "opentelemetry-operator.fullname" . }}-webhook-service.{{ .Release.Namespace }}.svc
+    - {{ template "opentelemetry-operator.fullname" . }}-webhook-service.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}
   issuerRef:
     {{- if .Values.admissionWebhooks.certManager.issuerRef }}
     {{- toYaml .Values.admissionWebhooks.certManager.issuerRef | nindent 4 }}

@@ -13,7 +13,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /mutate-opentelemetry-io-v1alpha1-instrumentation
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -44,7 +44,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /mutate-opentelemetry-io-v1beta1-opentelemetrycollector
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -75,7 +75,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /mutate-v1-pod
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -116,7 +116,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /validate-opentelemetry-io-v1alpha1-instrumentation
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -147,7 +147,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /validate-opentelemetry-io-v1alpha1-instrumentation
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -177,7 +177,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /validate-opentelemetry-io-v1beta1-opentelemetrycollector
         port: {{ .Values.admissionWebhooks.servicePort }}
@@ -208,7 +208,7 @@ webhooks:
       - v1
     clientConfig:
       service:
-        name: {{ template "opentelemetry-operator.fullname" . }}-webhook
+        name: {{ template "opentelemetry-operator.fullname" . }}-webhook-service
         namespace: {{ .Release.Namespace }}
         path: /validate-opentelemetry-io-v1beta1-opentelemetrycollector
         port: {{ .Values.admissionWebhooks.servicePort }}
